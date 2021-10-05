@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>emp-add</title>
+</head>
+<body>
+<form action="/add" method="post" enctype="multipart/form-data">
+    姓名：<input type="text" name="name"/><br/>
+    头像：<input type="file" name="file"/><br/>
+    部门：
+    <select name="did">
+        <option th:each="dept : ${list}" th:value="${dept.id}" th:text="${dept.name}"></option>
+    </select>
+    <br/>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>

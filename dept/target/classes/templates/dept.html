@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>部门列表</title>
+</head>
+<body>
+<table border="1" width="500px">
+    <tr>
+        <th>编号</th>
+        <th>部门名称</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="dept : ${list}">
+        <td th:text="${dept.id}"></td>
+        <td th:text="${dept.name}"></td>
+        <td><a th:href="${'http://localhost:8081/emplist?dept_id=' + dept.id}">查看</a></td>
+    </tr>
+</table>
+</body>
+</html>
